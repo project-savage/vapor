@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+
+    <script type="module" src="main.js" defer></script>
+    <link rel="stylesheet" href="./style.css"></link>
+    <style type="text/css" media="screen">
+        #editor{
+            width: 500px;
+            height: 500px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="settings-panel" class="resizable preview-container">
+        <h1 style="text-align: center; color: white;">Node Creator</h1>
+        <form>
+            <label for="startTime">Start Time:</label><br>
+            <input  id="startTime" name="startTime"><br>
+            <label for="endTime">End Time:</label><br>
+            <input id="endTime" name="endTime"><br>
+            <label for="x">X:</label><br>
+            <input id="x" name="x"><br>
+            <label for="y">Y:</label><br>
+            <input id="y" name="y"><br>
+            <label for="borderRadius">Border Radius:</label><br>
+            <input id="borderRadius" name="borderRadius"><br>
+            <label for="backgroundColor">Background Color:</label><br>
+            <input type="text" id="backgroundColor" name="backgroundColor"><br>
+
+            <button id="createNodeButton">Create Node</button>
+
+        </form>
+    </div> -->
+    
+    <div class="preview-container draggable resizable">
+        <canvas class="preview aspect-ratio-fixed" data-aspect-ratio="21:9"></canvas>
+    </div>
+    <div class="timeline"><input type="range" min="0" max="1" value="0" class="slider" id="timelineInput"></div>
+    <div class="assets"></div>
+    <div id="editor" class="draggable resizable">function foo(items) {
+        var x = "All this is syntax highlighted";
+        return x;
+    }</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/ambiance");
+        editor.session.setMode("ace/mode/javascript");
+    </script>
+    
+</body>
+</html>
