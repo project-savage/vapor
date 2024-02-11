@@ -1,7 +1,7 @@
 import { PluginInterface } from "/core/plugin/pluginHandler.js";
 import { StyleObject } from "/core/styling/styleObject.js";
-import { Dimension } from "/core/styling/dimension.js";
-import { Color } from "/core/styling/color.js";
+import { createDimension } from "/core/styling/dimension.js";
+import { createColor } from "/core/styling/color.js";
 export default class SpanPlugin extends PluginInterface {
     getNodeType() {
         return 'SPAN';
@@ -11,8 +11,8 @@ export default class SpanPlugin extends PluginInterface {
         let style = new StyleObject();
 
         style.fontFamily = "serif";
-        style.fontSize = new Dimension(100, 'px');
-        style.color = new Color();
+        style.fontSize = createDimension(100, 'px');
+        style.color = createColor();
 
         let innerText = "Span Tag";
         let isTextNode = true;

@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "/core/*": [
+        "./core/*"
+      ],
+      "/plugins/*": [
+        "./plugins/*"
+      ],
+      "/preview/*": [
+        "./preview/*"
+      ],
+      "/ui/*": [
+        "./ui/*"
+      ],
+      "/utility/*": [
+        "./utility/*"
+      ]
+    }
+  },
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js",
+}

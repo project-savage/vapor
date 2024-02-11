@@ -47,7 +47,8 @@ export default class DivPlugin extends PluginInterface {
         style.backgroundColor = createColor();
         style.border = new Holder({radius: createDimension(10, 'px'), width: createDimension(1, 'px'), color: createColor(255, 255, 255, 0) });
         
-        return { style };
+        let content = new Holder({});
+        return { style, content };
     }
 
     getRenderFunction() {

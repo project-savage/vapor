@@ -30,10 +30,10 @@ export class Color {
 
     /**
      * Change a color.
-     * @param {number} r - [0-255] red.
-     * @param {number} g - [0-255] green.
-     * @param {number} b - [0-255] blue.
-     * @param {number} a - [0-1] opacity/alpha.
+     * @param {number | undefined} r - [0-255] red.
+     * @param {number | undefined} g - [0-255] green.
+     * @param {number | undefined} b - [0-255] blue.
+     * @param {number | undefined} a - [0-1] opacity/alpha.
      */
     setColor(r, g, b, a) {
         if (r !== undefined && g !== undefined && b !== undefined && a !== undefined) {
@@ -59,10 +59,10 @@ export class Color {
 
 /**
  * 
- * @param {number} r - [0-255]
- * @param {number} g - [0-255]
- * @param {number} b - [0-255]
- * @param {number} a - [0-1]
+ * @param {number | undefined} r - [0-255]
+ * @param {number | undefined} g - [0-255]
+ * @param {number | undefined} b - [0-255]
+ * @param {number | undefined} a - [0-1]
  */
 export function createColor(r, g, b, a) {
     let color = new Color();
