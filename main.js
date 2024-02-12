@@ -23,15 +23,15 @@ timeline.createNode(createPosition(100, 100), 'DIV')
     });
 setTimeout(() => {
     timeline.createNode(createPosition(1000, 100), 'DIV')
-    .then(node => {
-        node.setTime(0, 5);
-        node.setAnimation((node, time) => { node.pos.x += time * 200; });
-        timeline.addNode(node);
-    })
-    .catch(error => {
-        // Handle any errors here
-        console.error('Error creating node:', error);
-    });
+        .then(node => {
+            node.setTime(0, 5);
+            node.setAnimation((node, time) => { node.pos.x += time * 200; });
+            timeline.addNode(node);
+        })
+        .catch(error => {
+            // Handle any errors here
+            console.error('Error creating node:', error);
+        });
 }, 1000);
 
 timeline.createNode(createPosition(100, 100), 'SPAN')
@@ -58,6 +58,20 @@ timeline.createNode(createPosition(300, 500), 'P')
         console.error('Error creating node:', error);
     });
 
+timeline.createNode(createPosition(300, 500), 'IMG')
+    .then(node => {
+
+        node.setTime(0, 6);
+        node.setAnimation((node, time) => { node.pos.x += time * 100; });
+        node.style.setWidthHeight(createDimension(1000, 'px'), createDimension(500, 'px'));
+        let absoluteUrl = window.location.origin + "/test.jpg";
+        node.src = absoluteUrl;
+        timeline.addNode(node);
+    })
+    .catch(error => {
+        // Handle any errors here
+        console.error('Error creating node:', error);
+    });
 
 timeline.linkInput('#timelineInput');
 timeline.linkKeyStroke('a', 'd');

@@ -81,8 +81,12 @@ export class Node {
             if(this.hasOwnProperty(prop)){
                 if(prop !== 'animation'){
                     if(this[prop] instanceof Object){
-                        
-                        NodeCopy[prop] = this[prop].clone();
+                        if(this[prop] instanceof Image){
+                            NodeCopy[prop] = this[prop];
+                            
+                        }else{
+                            NodeCopy[prop] = this[prop].clone();
+                        }
                     } else{
                         NodeCopy[prop] = JSON.parse(JSON.stringify(this[prop]));
                     }
